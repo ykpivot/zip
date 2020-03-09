@@ -1,11 +1,11 @@
 package com.yosep.zip;
 
 // Zip4j 2.4.0 dependencies
-//import net.lingala.zip4j.ZipFile;
+import net.lingala.zip4j.ZipFile;
 
 // Zip4j 1.3.1 dependencies
-import net.lingala.zip4j.core.ZipFile;
-import net.lingala.zip4j.model.ZipParameters;
+//import net.lingala.zip4j.core.ZipFile;
+//import net.lingala.zip4j.model.ZipParameters;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -24,17 +24,17 @@ public class ApplicationStartupRunner implements CommandLineRunner {
         System.out.println("Started...");
 
         String path = "/Users/ykim/workspace/zip/files/";
-        String outputFile = path + "output1.3.1.zip";
+        String outputFile = path + "output2.0.1.zip";
         String inputFile1 = path + "input1.txt";
 
         // Create zip file using Zip4j 2.4.0
-//        ZipFile output = new ZipFile(outputFile);
-//        output.addFile(new File(inputFile1));
+        ZipFile output = new ZipFile(outputFile);
+        output.addFile(new File(inputFile1));
 
         // Create zip file using Zip4j 1.3.1
-        ZipFile output = new ZipFile(outputFile);
-        output.addFile(new File(inputFile1),
-                new ZipParameters());
+//        ZipFile output = new ZipFile(outputFile);
+//        output.addFile(new File(inputFile1),
+//                new ZipParameters());
 
         // Verifying if output zip is healthy
 
